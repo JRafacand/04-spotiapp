@@ -11,13 +11,15 @@ export class SearchComponent {
   artists:any[]=[];
   constructor (private spotify:SpotifyService){}
   
+  //forma rafa
   buscarart(termino:string){
   console.log(termino);
   this.spotify.getArtista(termino)
     .subscribe((data:any)=>{
-    for (let i = 0; i < data.length; i++) {
+    this.artists=data;
+    /* for (let i = 0; i < data.length; i++) {
       console.log('entre',data.length);  
-      if (data[i].images == 0) {
+      if ((data[i].images==0) || (data[i].images==null)) {
           data[i].images =[
             {
                 "height": 640,
@@ -28,6 +30,6 @@ export class SearchComponent {
          }
           this.artists[i]=data[i];
           console.log(this.artists);
-        }});
+     */});
     }
 }

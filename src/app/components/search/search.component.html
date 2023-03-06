@@ -7,7 +7,7 @@
 <div class="row row-cols-1 row-cols-md-3 g-4 m-3">
     <div class="col" *ngFor="let buscar of artists">
       <div  class="card">
-        <img [src]="buscar.images[0].url" class="card-img-top" alt="...">
+        <img [src]="buscar.images | noimage" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{buscar.name}}</h5>
           <span *ngFor="let artista of buscar.artists" class="badge text-bg-primary">{{artista.name}}</span>
