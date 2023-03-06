@@ -1,3 +1,15 @@
-<li *ngFor="let pais of paises">
+<!-- <li *ngFor="let pais of paises">
     Paies:{{pais.name}} - Codigo Numerico: {{pais.numericCode}}
 </li>
+ -->
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let canciones of nuevascanciones">
+      <div  class="card">
+        <img [src]="canciones.images[0].url" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{canciones.name}}</h5>
+          <span *ngFor="let artista of canciones.artists" class="badge text-bg-primary">{{artista.name}}</span>
+        </div>
+      </div>
+    </div>
+</div>
