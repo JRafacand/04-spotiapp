@@ -19,11 +19,12 @@ export class HomeComponent {
      */
     //aqui invoco mi servicio
     nuevascanciones: any[]=[];
+    
     constructor(private spotify:SpotifyService) {
      this.spotify.getnewreleases()
       .subscribe( (data: any)=>{
-        console.log(data.albums.items);
-        this.nuevascanciones=data.albums.items;
+        //console.log(data.albums.items);
+        this.nuevascanciones=data;
       });
      }
       
