@@ -15,11 +15,21 @@ export class SearchComponent {
   console.log(termino);
   this.spotify.getArtista(termino)
     .subscribe((data:any)=>{
-      console.log(data)
-      if (data.images=!null){
-      console.log(data.name);
-      this.artists=data
-      }
-    });
-  }
+    for (let i = 0; i < data.length; i++) {
+      console.log('entre',data.length);  
+      if (data[i].images == 0) {
+          data[i].images =[
+            {
+                "height": 640,
+                "url": "assets/img/noimage.png",
+                "width": 640
+            }]; //reemplazar por cero
+        console.log('entre2');
+          
+        }
+          this.artists[i]=data[i]
+          console.log(this.artists);
+          ;
+    }});
+    }
 }
