@@ -23,13 +23,11 @@ export class SearchComponent {
                 "height": 640,
                 "url": "assets/img/noimage.png",
                 "width": 640
-            }]; //reemplazar por cero
+            }]; 
         console.log('entre2');
-          
-        }
-          this.artists[i]=data[i]
+         }
+          this.artists[i]=data[i];
           console.log(this.artists);
-          ;
-    }});
+        }});
     }
 }
