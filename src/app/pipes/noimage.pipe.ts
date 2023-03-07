@@ -17,3 +17,4 @@ export class NoimagePipe implements PipeTransform {
   }
 }
 }
+
