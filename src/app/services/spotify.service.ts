@@ -19,13 +19,13 @@ export class SpotifyService {
     const url=`https://api.spotify.com/v1/${query}`;
     
     const headers =new HttpHeaders({
-      'Authorization': 'Bearer BQAo7BMCWdMXWBxK8onwTmU1KB_GIB6VJNRPqMikFfjr8WLM7v-O8n0p4tj6EgJp8ofgL1QdEbuZXfWidpmjTYi0lX0VwdSG3GwI8OyRf012pyq2gX2p'
+      'Authorization': 'Bearer BQA6SYVHluKOYV43S8clm2MF2VQm10A_zk0ylkEcQPf230R5ToKU0rgLnOfpQV0m8dPannE6mS6BCpiw7sMpIIUTGiexcdm9nDcJ48xoTmq3UNUmDsb-'
     });
     return this.http.get(url, {headers});  
   }
 
    getnewreleases(){
-        return this.getQuery('browse/new-releases?limit=20') 
+        return this.getQuery('browse/new-releases?limit=25') 
                    .pipe(map ((data:any)=>{return data['albums'].items}));
       
     }

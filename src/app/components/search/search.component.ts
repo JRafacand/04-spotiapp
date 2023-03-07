@@ -9,14 +9,18 @@ import { SpotifyService } from '../../services/spotify.service';
 export class SearchComponent {
   
   artists:any[]=[];
-  constructor (private spotify:SpotifyService){}
+  loading:any;
   
+  constructor (private spotify:SpotifyService){}  
+    
   //forma rafa
   buscarart(termino:string){
   console.log(termino);
+  this.loading=true;
   this.spotify.getArtista(termino)
     .subscribe((data:any)=>{
     this.artists=data;
+    this.loading=false;
     /* for (let i = 0; i < data.length; i++) {
       console.log('entre',data.length);  
       if ((data[i].images==0) || (data[i].images==null)) {
