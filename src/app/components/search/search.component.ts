@@ -36,4 +36,6 @@ export class SearchComponent {
           console.log(this.artists);
      */});
     }
+
+    
 }

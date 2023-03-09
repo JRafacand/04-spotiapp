@@ -1,7 +1,7 @@
 <app-loading *ngIf="loadingart"></app-loading>
 <div class="row animated fadeIn" *ngIf="!loadingart">
     <div class="col-2">
-        <img [src]="artista.images|noimage" class="img-thumbnail img-circle">
+        <img [src]="artista.images | noimage" class="img-thumbnail img-circle"> 
     </div>
     <div class="col">
         <h3>{{artista.name}}</h3>
@@ -17,5 +17,42 @@
             Regresar
         </button>
 
+    </div>
+</div>
+
+<div classs="row" class="m-5">
+    <div class="col">
+        <table calss="table" >
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista Previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let info of toptracks">
+                    <td>
+                        <img [src]="info.album.images | noimage" class="img-thumb">
+                    </td>
+                    <td>{{ info.album.name }}</td>
+                    <td>
+                        {{ info.album.name }}
+                    </td>
+                    <td>
+                        <!-- <audio controls [src]="info.preview_url"></audio> -->
+                        <iframe
+                        [src]="'https://open.spotify.com/embed/track/' | domseguro : info.id"
+                                width="300"
+                                height="80"
+                                frameborder="0"
+                                allowtransparency="true"
+                                allow="encrypted-media">
+                        </iframe>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
